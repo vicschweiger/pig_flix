@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_movie.css') }}">
+    <title>Pig Flix</title>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/pig.png') }}" alt="Logo de Pig Flix">
+                <h1>Pig Flix</h1>
+            </a>
+        </div>
+        <div>
+            <input type="text" placeholder="Digite o filme que procura">
+        </div>
+    </header>
+    <main class="add_movie">
+        <form action="/add_movie", method="post">
+            <label for="title">Título:</label>
+            <input type="text" name="title" id="title">
+            <label for="cover_img">Imagem de capa:</label>
+            <input type="text" name="cover_img" id="cover_img">
+            <label for="launch_date">Data de lançamento:</label>
+            <input type="text" name="launch_date" id="launch_date">
+            <label for="url">Link:</label>
+            <input type="text" name="url" id="url">
+            <input type="submit" value="Adicionar">
+        </form>
+    </main>
+</body>
+</html>

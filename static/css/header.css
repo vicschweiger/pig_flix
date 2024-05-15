@@ -1,0 +1,43 @@
+.header {
+    background-color: var(--preto);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+
+.header a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header h1{
+    font-family: var(--roboto_slab);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--branco);
+}
+
+.header input[type="text"]{
+    border-radius: 5px;
+    border: none;
+    padding: 0.75rem;
+    width: 25rem;
+}
+
+.header input[type="button"]{
+    background-color: var(--preto);
+    border-color: var(--branco);
+    border-radius: 5px;
+    color: var(--branco);
+    padding: 0.75rem;
+    width: 15rem;
+}
+
+.header div {
+    display: flex;
+    gap: 0.75rem;
+}
