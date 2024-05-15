@@ -1,0 +1,25 @@
+.movies {
+    font-family: var(--roboto_slab);
+    color: var(--branco);
+    background-color: var(--preto);
+    padding: 2rem 8rem;
+
+}
+.movies a {
+    font-family: var(--roboto_slab);
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--branco);
+}
+
+.movies h1 {
+    font-size: 3rem;
+}
+
+.movies img {
+    width: 20%;
+}
+
+.movies p {
+    font-size: 0.75rem;
+}

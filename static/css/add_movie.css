@@ -1,3 +1,33 @@
 .add_movie {
-    
+    background-color: var(--preto);
+    font-family: var(--roboto_slab);
+    padding: 3rem 25rem;
+    height: calc(80vh - 96px)
+}
+.add_movie form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.add_movie label {
+    color: var(--branco);
+}
+
+.add_movie input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem;
+}
+
+.add_movie input[type="submit"] {
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--roboto_slab);
+    font-weight: 500;
+    background-color: var(--branco);
+    padding: 0.75rem;
+    width: 30%;
+    align-self: center;
 }

@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
 
 
-engine = create_engine('sqlite:///filmes.db')
+engine = create_engine('sqlite:///movies.db')
 db_session = scoped_session(sessionmaker(autocommit=False, bind=engine))
 
 Base = declarative_base()
@@ -27,7 +27,8 @@ class Movies(Base):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    movies = db_session.query(Movies).all()
+    return render_template('index.html', movies=movies)
 
 @app.route('/add_movie')
 def add_movie():
@@ -35,19 +36,23 @@ def add_movie():
 
 @app.route('/save', methods=['POST'])
 def save():
-    if request.method == 'POST':
 
-        title = request.form['title']
-        url = request.form['url']
-        cover_img = request.form['cover_img']
-        launch_date = request.form['launch_date']
-        
-        new_movie = Movies(title=title, url=url, cover_img=cover_img, launch_date=launch_date)
-        
-        db_session.add(new_movie)
-        db_session.commit()
-        
-        return render_template('add_movie.html')
+    title = request.form['title'].title()
+    url = request.form['url']
+    cover_img = request.form['cover_img']
+    launch_date = request.form['launch_date']
+    
+    new_movie = Movies(title=title, url=url, cover_img=cover_img, launch_date=launch_date)
+    
+    db_session.add(new_movie)
+    db_session.commit()
+    
+    return render_template('add_movie.html')
+
+@app.route('/watch')
+def watch():
+    return render_template('watch.html')
 
 if __name__ == "__main__":
+    Base.metadata.create_all(bind=engine)
     app.run(debug=True)

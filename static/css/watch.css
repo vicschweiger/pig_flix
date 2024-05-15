@@ -1,0 +1,6 @@
+.watch {
+    background-color: var(--preto);
+    display: flex;
+    flex-direction: column;
+    padding: 0 10rem;
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/add_movie.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <title>Pig Flix</title>
 </head>
 <body>
@@ -24,17 +25,23 @@
         </div>
     </header>
     <main class="add_movie">
-        <form action="/add_movie", method="post">
+        <form action="/save" method="post">
             <label for="title">Título:</label>
             <input type="text" name="title" id="title">
             <label for="cover_img">Imagem de capa:</label>
             <input type="text" name="cover_img" id="cover_img">
             <label for="launch_date">Data de lançamento:</label>
-            <input type="text" name="launch_date" id="launch_date">
+            <input type="text" name="launch_date" id="launch_date" placeholder="ex: 1990">
             <label for="url">Link:</label>
-            <input type="text" name="url" id="url">
+            <input type="text" name="url" id="url" placeholder="ex: https://www.youtube.com/watch?v=C7akTOA5WqQ">
             <input type="submit" value="Adicionar">
         </form>
     </main>
+    <footer class="footer">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/pig.png') }}" alt="Logo de Pig Flix">
+                <p>Pig Flix</p>
+            </a>
+    </footer>
 </body>
 </html>
