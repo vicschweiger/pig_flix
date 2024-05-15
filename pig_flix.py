@@ -49,9 +49,13 @@ def save():
     
     return render_template('add_movie.html')
 
-@app.route('/watch')
-def watch():
-    return render_template('watch.html')
+@app.route('/watch/<movie_id>')
+def watch(movie_id):
+    movie = db_session.query(Movies).filter_by(id=movie_id).first()
+    if movie:
+        return render_template('watch.html', movie=movie)
+    else:
+        return "Movie not found", 404
 
 if __name__ == "__main__":
     Base.metadata.create_all(bind=engine)

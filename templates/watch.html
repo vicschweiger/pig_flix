@@ -26,10 +26,8 @@
         </div>
     </header>
     <main class="watch">
-        <h1></h1>
-        <video controls>
-            <source src="" type="video/mp4">
-        </video>
+        <h1>{{ movie.title }}</h1>
+        <iframe width="560" height="315" src="{{ movie.url }}" title="Embedded video" frameborder="0" allowfullscreen></iframe>
     </main>
     <footer class="footer">
         <a href="{{ url_for('index') }}">

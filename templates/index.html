@@ -29,8 +29,8 @@
         <h1>Filmes</h1>
         <div>
             {% for movie in movies %}
-            <a href="">
-                <img src="{{ movie.cover_img }}" alt="{{ movie.title }}">
+            <a href="{{ url_for('watch', movie_id=movie.id) }}>">
+               <img src="{{ movie.cover_img }}" alt="{{ movie.title }}">
                 <h2>{{ movie.title }}</h2>
                 <p>{{ movie.launch_date }}</p>
             </a>
