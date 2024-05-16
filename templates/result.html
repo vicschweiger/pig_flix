@@ -29,7 +29,7 @@
         </div>
     </header>
     <main class="movies">
-        <h1>Filmes</h1>
+        <h1>Resultado da Busca:</h1>
         <div>
             {% for movie in movies %}
                 <a href="{{ url_for('watch', movie_id=movie.id) }}">
@@ -47,7 +47,7 @@
         </a>
     </footer>
     <script>
-        function add_movie() {
+        function redirect() {
             window.location.href = "/add_movie";
         }
     </script>

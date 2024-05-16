@@ -55,7 +55,24 @@ def watch(movie_id):
     if movie:
         return render_template('watch.html', movie=movie)
     else:
-        return "Movie not found", 404
+        return render_template('error404.html')
+    
+@app.route('/search', methods=['GET'])
+def search():
+    title = request.args.get('title')
+    if title:
+        movies = Movies.query.filter(Movies.title.like(f'%{title}%')).all()
+        return render_template('result.html', movies=movies)
+    else:
+        return "Por favor, forneça um título para buscar."
+
+@app.route('/result')
+def result():
+    return render_template('result.html')
+    
+@app.route('/error404')
+def error404():
+    return render_template('error404.html')
 
 if __name__ == "__main__":
     Base.metadata.create_all(bind=engine)

@@ -3,4 +3,15 @@
     display: flex;
     flex-direction: column;
     padding: 0 10rem;
+    font-family: var(--roboto_slab);
+}
+
+.watch h1 {
+    color: var(--branco);
+    font-size: 2rem;
+}
+
+.watch iframe {
+    height: 80vh;
+    padding: 1rem 0;
 }

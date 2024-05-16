@@ -1,0 +1,19 @@
+.error {
+    font-family: var(--roboto_slab);
+    background-color: var(--preto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12rem 0;
+    gap: 4rem;
+}
+
+.error h1 {
+    font-size: 5rem;
+    color: var(--branco);
+}
+
+.error p {
+    font-size: 1.75rem;
+    color: var(--branco);
+}

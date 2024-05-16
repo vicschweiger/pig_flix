@@ -21,7 +21,11 @@
             </a>
         </div>
         <div>
-            <input type="text" placeholder="Digite o filme que procura">
+            <input type="button" value="Adicionar filmes" onclick="add_movie()">
+            <form action="{{ url_for('search') }}" method="GET">
+                <input type="text" name="title" id="title" placeholder="Digite o filme que procura">
+                <input type="submit" value="Buscar">
+            </form>
         </div>
     </header>
     <main class="add_movie">
@@ -33,7 +37,7 @@
             <label for="launch_date">Data de lançamento:</label>
             <input type="text" name="launch_date" id="launch_date" placeholder="ex: 1990">
             <label for="url">Link:</label>
-            <input type="text" name="url" id="url" placeholder="ex: https://www.youtube.com/watch?v=C7akTOA5WqQ">
+            <input type="text" name="url" id="url" placeholder="ex: https://www.youtube.com/watch?v=>>>>>C7akTOA5WqQ<<<<<">
             <input type="submit" value="Adicionar">
         </form>
     </main>
